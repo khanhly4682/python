@@ -8,9 +8,43 @@ Example 1:
  print(add(3,5))
  # Output: 8
  
- Example 2:
+Example 2:
  # Sort a list
  a = [(1, 2), (4, 1), (8, 10), (13, -3)]
  a.sort(key=lambda x: x[1])
  print(a)
  # Output: [(13, -3), (4, 1), (1, 2), (9, 10)]
+ 
+Example 3:
+ >>> print map(lambda w: len(w), 'It is raining cats and dogs'.split())
+ # [2, 2, 7, 4, 3, 4]
+
+Example 4:
+>>> sentence = 'It is raining cats and dogs'
+>>> words = sentence.split()
+>>> print words
+# ['It', 'is', 'raining', 'cats', 'and', 'dogs']
+ 
+>>> lengths = map(lambda word: len(word), words)
+>>> print lengths
+# [2, 2, 7, 4, 3, 4]
+
+Example 5:
+>>> nums = range(2, 50) 
+>>> for i in range(2, 8): 
+...     nums = filter(lambda x: x == i or x % i, nums)
+... 
+>>> print nums
+[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
+
+Example 6:
+>>> foo = [2, 18, 9, 22, 17, 24, 8, 12, 27]
+>>> 
+>>> print filter(lambda x: x % 3 == 0, foo)
+[18, 9, 24, 12, 27]
+>>> 
+>>> print map(lambda x: x * 2 + 10, foo)
+[14, 46, 28, 54, 44, 58, 26, 34, 64]
+>>> 
+>>> print reduce(lambda x, y: x + y, foo)
+139
