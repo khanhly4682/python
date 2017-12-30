@@ -1,6 +1,6 @@
 # Def:
 ----------------------------------------------------------------------------------------------------
-- Lambda is a small function that is defined without a name.
+- Lambda is a small function that is created on the fly, and defined without a name.
 - Lambda is throw-away function, means that they are just needed once where they have been created.
 - Lambda is mainly used in combination with filter(), map() and reduce()
 -----------------------------------------------------------------------------------------------------
