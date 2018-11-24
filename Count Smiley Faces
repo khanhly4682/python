@@ -20,6 +20,7 @@ countSmileys([';]', ':[', ';*', ':$', ';-D']); // should return 1;
 
 Note: In case of an empty array return 0. You will not be tested with invalid input (input will always be an array). Order of the face (eyes, nose, mouth) elements will always be the same
 ----------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------
 def count_smileys(arr):
     count = 0
     if not arr:
@@ -28,4 +29,21 @@ def count_smileys(arr):
     for i in arr:
       if i in smileys:
         count += 1
+    return count
+----------------------------------------------------------------------------------------------------------------------------
+import re
+
+def count_smileys(arr):
+    return sum(1 for s in arr if re.match(r'\A[:;][-~]?[)D]\Z',s))
+-----------------------------------------------------------------------------------------------------------------------------
+def count_smileys(arr):
+    eyes = [":", ";"]
+    noses = ["", "-", "~"]
+    mouths = [")", "D"]
+    count = 0
+    for eye in eyes:
+        for nose in noses:
+            for mouth in mouths:
+                face = eye + nose + mouth
+                count += arr.count(face)
     return count
